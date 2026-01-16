@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayushi Majumdar - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #2d3748;
+            background: white;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                max-width: none;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #1e3a5f;
+        }
+
+        .name {
+            font-size: 28pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 12pt;
+            font-weight: 500;
+            color: #2a9d8f;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 10pt;
+            color: #4a5568;
+        }
+
+        .contact-info a {
+            color: #1e3a5f;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 12pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 10.5pt;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .skill-category h4 {
+            font-size: 10pt;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 4px;
+        }
+
+        .skill-list {
+            font-size: 10pt;
+            color: #4a5568;
+        }
+
+        /* Projects */
+        .project {
+            margin-bottom: 14px;
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .project-tech {
+            font-size: 9pt;
+            color: #2a9d8f;
+            font-weight: 500;
+        }
+
+        .project-description {
+            font-size: 10pt;
+            color: #4a5568;
+            margin-left: 0;
+        }
+
+        .project-description li {
+            margin-bottom: 2px;
+            list-style-type: disc;
+            margin-left: 18px;
+        }
+
+        /* Education & Certifications */
+        .edu-item {
+            margin-bottom: 8px;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .edu-degree {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .edu-institution {
+            font-size: 10pt;
+            color: #4a5568;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 20px;
+        }
+
+        .cert-item {
+            font-size: 10pt;
+            color: #4a5568;
+        }
+
+        .cert-item::before {
+            content: "•";
+            color: #2a9d8f;
+            font-weight: bold;
+            margin-right: 6px;
+        }
+
+        /* Print button */
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #1e3a5f;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            box-shadow: 0 4px 12px rgba(30, 58, 95, 0.3);
+        }
+
+        .print-btn:hover {
+            background: #2a4a73;
+        }
+
+        .print-instructions {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: #f0f4f8;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 11px;
+            color: #4a5568;
+            max-width: 200px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="print-btn no-print" onclick="window.print()">📄 Save as PDF</button>
+    <div class="print-instructions no-print">
+        Click the button, then choose "Save as PDF" as the destination in the print dialog.
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 class="name">Ayushi Majumdar</h1>
+        <p class="title">Data Science & Machine Learning Analyst</p>
+        <div class="contact-info">
+            <span>📧 <a href="mailto:majumdarayushi1505@gmail.com">majumdarayushi1505@gmail.com</a></span>
+            <span>💼 <a href="https://www.linkedin.com/in/ayushimajumdar/"
+                    target="_blank">linkedin.com/in/ayushimajumdar</a></span>
+            <span>🔗 <a href="https://github.com/Ayushi-DevSphere"
+                    target="_blank">github.com/Ayushi-DevSphere</a></span>
+        </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary">
+            Data Science and Machine Learning professional with expertise in developing predictive models, performing
+            statistical analysis, and extracting actionable insights from complex datasets. Skilled in Python, SQL, and
+            machine learning frameworks with a strong foundation in Natural Language Processing. Proven ability to
+            translate technical findings into business recommendations and collaborate effectively with cross-functional
+            teams.
+        </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Technical Skills</h4>
+                <p class="skill-list">Python, Java, R, SQL, Machine Learning, Data Analysis, NLP, Statistical Modeling,
+                    Git, Jupyter Notebook, Pandas, NumPy, Scikit-learn, Data Visualization</p>
+            </div>
+            <div class="skill-category">
+                <h4>Professional Skills</h4>
+                <p class="skill-list">Problem Solving, Analytical Thinking, Critical Reasoning, Communication, Team
+                    Collaboration, Business Acumen, Project Management, Research & Analysis</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project">
+            <div class="project-header">
+                <span class="project-title">Movie Recommendation System</span>
+                <span class="project-tech">Python, NLP, Scikit-learn, TF-IDF</span>
+            </div>
+            <ul class="project-description">
+                <li>Developed a content-based recommendation engine using Natural Language Processing to analyze movie
+                    descriptions and metadata</li>
+                <li>Implemented text vectorization and cosine similarity algorithms to generate personalized movie
+                    recommendations</li>
+                <li>Enhanced user engagement through intelligent content discovery applicable to streaming platforms
+                </li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
+                <span class="project-title">Credit Risk Analysis</span>
+                <span class="project-tech">Python, Machine Learning, Pandas, Matplotlib</span>
+            </div>
+            <ul class="project-description">
+                <li>Built predictive models using classification algorithms to assess borrower creditworthiness</li>
+                <li>Performed exploratory data analysis, feature engineering, and model evaluation using various
+                    performance metrics</li>
+                <li>Delivered insights supporting data-driven lending decisions for financial risk management</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
+                <span class="project-title">Online Movie Booking System</span>
+                <span class="project-tech">Java, Spring Boot, JavaScript, Firebase</span>
+            </div>
+            <ul class="project-description">
+                <li>Designed and developed a full-stack web application with interactive seat selection and real-time
+                    availability</li>
+                <li>Implemented user authentication, booking management, and dynamic pricing functionality</li>
+                <li>Demonstrated end-to-end software development capabilities and user-centric design principles</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-item">
+            <div class="edu-header">
+                <span class="edu-degree">Bachelor of Technology in Computer Science Engineering</span>
+            </div>
+            <p class="edu-institution">JECRC University | Specialization: Data Science & Analytics</p>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section">
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-grid">
+            <span class="cert-item">Machine Learning Certification</span>
+            <span class="cert-item">NVIDIA Deep Learning Certification</span>
+            <span class="cert-item">Cybersecurity Fundamentals</span>
+            <span class="cert-item">Business Development: Start to Scale (NPTEL)</span>
+            <span class="cert-item">E-Business (NPTEL)</span>
+            <span class="cert-item">Soft Skills Development (NPTEL)</span>
+        </div>
+    </section>
+</body>
+
+</html>
